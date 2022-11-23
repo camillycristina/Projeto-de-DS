@@ -22,7 +22,7 @@
         <?php }else{ ?>           
                        
                             <?php include 'conexao.php'; 
-                                $consulta = "SELECT * FROM cursos";
+                                $consulta = "SELECT * FROM curso";
                                 $consulta2 = mysqli_query($conexao, $consulta);
 
                                 while($linha = mysqli_fetch_array($consulta2)){ ?>
@@ -34,7 +34,7 @@
                             <label>DESCRICAO:</label>
                             <input type="text" name="descricao" value="<?php echo $linha['Descricao']; ?>"></br></br>
                             <label> CARGA HORARIA:</label>
-                            <input type="text" name="carga" value="<?php echo $linha['Carga_horaria']; ?>"></br></br>
+                            <input type="text" name="carga" value="<?php echo $linha['Carga']; ?>"></br></br>
                             <label>AREA:</label>
                             <input type="text" name="area" value="<?php echo $linha['Area']; ?>"></br></br>
 

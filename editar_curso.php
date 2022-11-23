@@ -8,9 +8,9 @@
     $Carga_horaria = $_POST['carga'];
     $Area = $_POST['area'];
 
-    $consulta = "UPDATE cursos SET Nome = '$Nome',
+    $consulta = "UPDATE curso SET Nome = '$Nome',
                                   Descricao = '$Descricao',
-                                 Carga_horaria = $Carga_horaria, 
+                                 Carga = $Carga_horaria, 
                                  Area = '$Area'
                                 WHERE codigo = $codigo";
 

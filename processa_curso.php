@@ -7,7 +7,7 @@ include 'conexao.php';
     $Carga_horaria = $_POST['carga'];
     $Area = $_POST['area'];
 
-    $query = "INSERT INTO cursos(Nome, Descricao, Carga_horaria, Area)
+    $query = "INSERT INTO curso(Nome, Descricao, Carga, Area)
                     VALUES('$Nome', '$Descricao', $Carga_horaria, '$Area')";
 
     mysqli_query($conexao, $query);

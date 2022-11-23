@@ -15,7 +15,7 @@
                 <?php
                     include 'conexao.php';
 
-                    $consulta = 'SELECT * FROM cursos';
+                    $consulta = 'SELECT * FROM curso';
                     $consulta_cursos = mysqli_query($conexao, $consulta);
 
                     while($linha = mysqli_fetch_array($consulta_cursos)){
