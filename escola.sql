@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Nov-2022 às 11:40
+-- Tempo de geração: 23-Nov-2022 às 16:17
 -- Versão do servidor: 10.4.20-MariaDB
 -- versão do PHP: 8.0.8
 
@@ -57,6 +57,19 @@ CREATE TABLE `curso` (
   `Area` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `matricula`
+--
+
+CREATE TABLE `matricula` (
+  `cod_matricula` int(11) NOT NULL,
+  `data` varchar(55) NOT NULL,
+  `ID` int(11) DEFAULT NULL,
+  `codigo` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Índices para tabelas despejadas
 --
@@ -74,6 +87,14 @@ ALTER TABLE `curso`
   ADD PRIMARY KEY (`codigo`);
 
 --
+-- Índices para tabela `matricula`
+--
+ALTER TABLE `matricula`
+  ADD PRIMARY KEY (`cod_matricula`),
+  ADD KEY `fk_al_mat` (`ID`),
+  ADD KEY `fk_cur_mat` (`codigo`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -87,7 +108,24 @@ ALTER TABLE `alunos`
 -- AUTO_INCREMENT de tabela `curso`
 --
 ALTER TABLE `curso`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `matricula`
+--
+ALTER TABLE `matricula`
+  MODIFY `cod_matricula` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `matricula`
+--
+ALTER TABLE `matricula`
+  ADD CONSTRAINT `fk_al_mat` FOREIGN KEY (`ID`) REFERENCES `alunos` (`ID`),
+  ADD CONSTRAINT `fk_cur_mat` FOREIGN KEY (`codigo`) REFERENCES `curso` (`codigo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
