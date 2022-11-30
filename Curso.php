@@ -8,13 +8,13 @@
 
             <form method="POST" action="processa_curso.php">
                 <label> NOME DO CURSO:</label>
-                <input type="text" name="nome" placeholder="Digite seu nome do curso"></br></br>
+                <input type="text" name="Nome" placeholder="Digite seu nome do curso"></br></br>
                 <label>DESCRICAO:</label>
-                <input type="text" name="descricao" placeholder="Digite sua descricao"></br></br>
+                <input type="text" name="Descricao" placeholder="Digite sua descricao"></br></br>
                 <label> CARGA HORARIA:</label>
-                <input type="text" name="carga" placeholder="Digite sua carga horaria"></br></br>
+                <input type="number" name="Carga" placeholder="Digite sua carga horaria"></br></br>
                 <label>AREA:</label>
-                <input type="text" name="area"placeholder="Digite sua area"></br></br>
+                <input type="text" name="Area"placeholder="Digite sua area"></br></br>
 
                 <input type="submit" value="CADASTRAR">
             </form>
@@ -30,13 +30,13 @@
                         <form method="POST" action="editar_curso.php">
                             <input type="hidden" name="codigo" value="<?php echo $linha['codigo']; ?>">
                             <label> NOME DO CURSO:</label>
-                            <input type="text" name="nome" value="<?php echo $linha['Nome']; ?>"></br></br>
+                            <input type="text" name="Nome" value="<?php echo $linha['Nome']; ?>"></br></br>
                             <label>DESCRICAO:</label>
-                            <input type="text" name="descricao" value="<?php echo $linha['Descricao']; ?>"></br></br>
+                            <input type="text" name="Descricao" value="<?php echo $linha['Descricao']; ?>"></br></br>
                             <label> CARGA HORARIA:</label>
-                            <input type="text" name="carga" value="<?php echo $linha['Carga']; ?>"></br></br>
+                            <input type="number" name="Carga" value="<?php echo $linha['Carga']; ?>"></br></br>
                             <label>AREA:</label>
-                            <input type="text" name="area" value="<?php echo $linha['Area']; ?>"></br></br>
+                            <input type="text" name="Area" value="<?php echo $linha['Area']; ?>"></br></br>
 
                             <input type="submit" value="EDITAR">
                         </form>

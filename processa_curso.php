@@ -2,10 +2,10 @@
 
 include 'conexao.php';
 
-    $Nome = $_POST['nome'];
-    $Descricao = $_POST['descricao'];
-    $Carga_horaria = $_POST['carga'];
-    $Area = $_POST['area'];
+    $Nome = $_POST['Nome'];
+    $Descricao = $_POST['Descricao'];
+    $Carga_horaria = $_POST['Carga'];
+    $Area = $_POST['Area'];
 
     $query = "INSERT INTO curso(Nome, Descricao, Carga, Area)
                     VALUES('$Nome', '$Descricao', $Carga_horaria, '$Area')";
